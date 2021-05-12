@@ -1,7 +1,7 @@
 {
   "name": "dialog-drawer-free-cs",
   "description": "基于element-ui的无阻Dialog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "贾晓朋 <jiaxp3@lenovo.com>",
   "license": "MIT",
   "private": false,
@@ -13,7 +13,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "publish": "npm run build && npm publish"
+    "publish": "npm publish",
+    "release": "npm run build && npm publish"
   },
   "dependencies": {
     "element-ui": "^2.13.2",
