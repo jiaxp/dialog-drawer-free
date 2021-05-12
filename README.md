@@ -1,6 +1,6 @@
 # dialog-drawer-free
 
-> 基于element-ui的时间区间选择组件
+> 基于element-ui的无阻Dialog
 
 ### Install
 
@@ -10,20 +10,18 @@ npm install dialog-drawer-free-cs --save
 
 ### Use
 ``` bash
-import DateRangePicker from 'dialog-drawer-free-cs'
+import DialogDrawerFree from 'dialog-drawer-free-cs'
 
-Vue.use(DateRangePicker);
+Vue.use(DialogDrawerFree);
 
-<date-range-picker v-model="dateValue"></date-range-picker>
+<dialog-drawer-free />
 ```
 
 ### Props
 ``` bash
-字段名称                类型           说明                        默认值
-rangeSeparator         String        分割线                       “-”
-defaultTime            Array         默认时间                     ['00:00:00', '23:59:59']
-minDate                String/Date   最小值                       -
-maxDate                String/Date   最大值        -
-startPlaceholder       String        开始时间提示语                开始日期
-endPlaceholder         String        结束时间提示语                结束日期
+字段名称                类型           说明                             默认值
+title                  String        标题                             -
+width                  String        宽度                             -
+visible                Boolean       是否显示Dialog                   false
+append-to-body         Boolean       Dialog 自身是否插入至 body 元素上  false
 ```

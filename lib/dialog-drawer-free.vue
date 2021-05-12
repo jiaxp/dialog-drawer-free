@@ -19,12 +19,17 @@
 </template>
 
 <script>
+import { Dialog } from 'element-ui'
+
 export default {
   name: 'DialogDrawerFree',
+  components: {
+    Dialog
+  },
   props: {
     title: {
       type: String,
-      default: '详情'
+      default: ''
     },
     width: {
       type: String
@@ -96,3 +101,137 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .el-dialog-drawer__free {
+    bottom: auto !important;
+    left: auto !important;
+
+    .el-dialog-drawer {
+      &.dialog-drawer-fade-in {
+        animation: dialog-drawer-fade-in 0.3s !important;
+      }
+
+      &.dialog-drawer-fade-out {
+        animation: dialog-drawer-fade-out 0.3s !important;
+      }
+    }
+
+    /deep/ .el-dialog {
+      transform: none;
+      left: 0;
+      position: relative;
+      margin: 0 auto;
+
+      /** dialog居中全局样式修改 */
+      .el-form-item__content {
+        .el-input,
+        .el-input-number,
+        .el-select,
+        .el-cascader {
+          width: 100%;
+        }
+      }
+
+      .el-dialog__body {
+        margin-top: 10px;
+        padding-bottom: 0;
+      }
+
+      .el-dialog__footer {
+        text-align: center;
+        height: 80px;
+        line-height: 80px;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+
+        .el-button {
+          min-width: 90px;
+          font-weight: bold;
+          font-size: 13px;
+
+          &.el-button--default {
+            color: #909399;
+            border-color: #C0C4CC;
+            background-color: #fff;
+
+            &:not(.is-disabled):hover, &:not(.is-disabled):focus {
+              color: #3E8DDD;
+              border-color: #3E8DDD;
+            }
+          }
+        }
+      }
+
+      /** dialog居中全局样式修改 end */
+
+      &.el-dialog-drawer {
+        margin: 0 !important;
+        width: 600px;
+        position: fixed;
+        height: 100%;
+        top: 50%;
+        left: 100% !important;
+        transform: translate(-100%, -50%);
+        display: flex;
+        flex-direction: column;
+
+        &.el-dialog-drawer__small {
+          width: 450px;
+        }
+
+        &.el-dialog-drawer__large {
+          width: 800px;
+        }
+
+        .el-dialog__header {
+          .el-button-group {
+            float: right;
+            margin-right: 50px;
+            margin-top: -2px;
+
+            .el-button.el-button--primary {
+              background-color: #F0F4FB;
+              border-color: #F0F4FB;
+              color: #3E8DDD;
+              font-weight: bold;
+
+              &.el-button__more {
+                padding: 7px;
+
+                > .el-icon-more {
+                  transform: rotate(90deg);
+                }
+              }
+
+              &:not(:first-child):not(:last-child) {
+                border-left-color: #DCDFE6;
+                border-right-color: #DCDFE6;
+                z-index: 5;
+              }
+
+              &:hover {
+                background-color: #E5F2FF;
+              }
+            }
+          }
+        }
+
+        .el-dialog__body {
+          padding-top: 0;
+          overflow-y: auto;
+          flex: 1;
+
+          .dialog-body__sub__title {
+            height: 40px;
+            line-height: 40px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #303133;
+          }
+        }
+      }
+    }
+  }
+</style>
