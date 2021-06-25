@@ -8,7 +8,7 @@
 npm install dialog-drawer-free-cs --save
 ```
 
-### Use
+### Usage
 ``` bash
 import DialogDrawerFree from 'dialog-drawer-free-cs'
 
